@@ -1,7 +1,7 @@
 
 # Automation using Python
 
-![Language](https://img.shields.io/github/languages/top/buiquangbao/automation-using-python?color=%3572a5&label=Python&style=flat-square)
+![Language](https://img.shields.io/github/languages/top/buiquangbao/automation-using-python?color=%233572a5&label=Python&style=flat-square)
 ![Status](https://img.shields.io/badge/Status-Complete-<COLOR>.svg?style=flat-square)
 
 ## Problem
