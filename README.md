@@ -12,8 +12,8 @@ Once the task is complete, **the supplier should be notified with an email** tha
 Finally, in parallel to the automation running, we want to **check the health of the system and send an email if something goes wrong**.
 
 ## Resouces
-- **Linux-instance VM** (Virtual Machine) through **local SSH Client** provided by [Qwiklabs](https://www.qwiklabs.com/)
-- SSH (Secure Shell) and Telnet client by [PuTTY](https://www.putty.org/)
+- **Linux-instance VM** (Virtual Machine) through local SSH (Secure Shell) Client provided by [Qwiklabs](https://www.qwiklabs.com/)
+- **SSH client** by [PuTTY](https://www.putty.org/)
 
 ## Solution - Table of Contents
 - [Fetching supplier data](#Fetching-supplier-data)
