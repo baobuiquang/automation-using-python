@@ -284,7 +284,7 @@ Run the changeImage.py script.
 
 Refresh the URL opened earlier, and now you should find all the images uploaded successfully.
 
-- image
+![Image](https://github.com/buiquangbao/automation-using-python/blob/master/assets/img03.png)
 
 ### Uploading the descriptions
 
@@ -292,7 +292,7 @@ The Django server is already set up to show the fruit catalog for your company. 
 
 Check out the Django REST framework, by navigating to `linux-instance-IP-Address/fruits` in your browser.
 
-- image
+![Image](https://github.com/buiquangbao/automation-using-python/blob/master/assets/img04.png)
 
 Currently, there are no products in the fruit catalog web-server. You can create a test fruit entry by entering the following into the content field:
 
@@ -300,11 +300,11 @@ Currently, there are no products in the fruit catalog web-server. You can create
 {"name": "Test Fruit", "weight": 100, "description": "This is the description of my test fruit", "image_name": "icon.sheet.png"}
 `
 
-- image
+![Image](https://github.com/buiquangbao/automation-using-python/blob/master/assets/img05.png)
 
 After entering the above data into the content field click on the POST button. Now visit the main page of your website (by going to `http://[linux-instance-external-IP]`), and the new test fruit you uploaded appears.
 
-- image
+![Image](https://github.com/buiquangbao/automation-using-python/blob/master/assets/img06.png)
 
 To add fruit images and their descriptions from the supplier on the fruit catalog web-server, create a new Python script that will automatically POST the fruit images and their respective description in JSON format.
 
@@ -408,7 +408,7 @@ Created feedback ID: 11
 
 Now go to the main page of your website (by going to `http://[linux-instance-IP-Address]/`) and check out how the new fruits appear.
 
-- image
+![Image](https://github.com/buiquangbao/automation-using-python/blob/master/assets/img07.png)
 
 ### Generate a PDF report
 
@@ -659,11 +659,11 @@ Now, check the webmail by visiting `[linux-instance-external-IP]/webmail`. Here,
 
 Now you should be able to see your inbox, with one unread email. Open the mail by double clicking on it. There should be a report in PDF format attached to the mail. View the report by opening it.
 
-- image
+![Image](https://github.com/buiquangbao/automation-using-python/blob/master/assets/img07.png)
 
-- image
+![Image](https://github.com/buiquangbao/automation-using-python/blob/master/assets/img08.png)
 
-- image
+![Image](https://github.com/buiquangbao/automation-using-python/blob/master/assets/img09.png)
 
 ### Health check
 
@@ -825,9 +825,9 @@ Now run the script:
 
 Check your inbox for any new email.
 
-- image
+![Image](https://github.com/buiquangbao/automation-using-python/blob/master/assets/img10.png)
 
-- image
+![Image](https://github.com/buiquangbao/automation-using-python/blob/master/assets/img11.png)
 
 Close the `stress --cpu` command by clicking Ctrl-c.
 
