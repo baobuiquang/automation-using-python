@@ -157,7 +157,7 @@ Add a shebang line in the first line.
 
 This is the challenge section, where you will be writing a script that satisfies the above objectives.
 
-Note: The raw images from `images` subdirectory contains alpha transparency layers. So, it is better to first convert `RGBA` 4-channel format to `RGB` 3-channel format before processing the images. Use `convert("RGB")` method for converting `RGBA` to `RGB` image.
+*Note*: The raw images from `images` subdirectory contains alpha transparency layers. So, it is better to first convert `RGBA` 4-channel format to `RGB` 3-channel format before processing the images. Use `convert("RGB")` method for converting `RGBA` to `RGB` image.
 
 After processing the images, save them in the same path `~/supplier-data/images`, with a `JPEG` extension.
 
@@ -638,15 +638,15 @@ if __name__ == "__main__":
 
 Use the following details to pass the parameters to `emails.generate_email()`:
 
-- From: `automation@example.com`
+- **From**: `automation@example.com`
 
-- To: `username@example.com` (Replace `username` with the `username` given in the Connection Details Panel on the right hand side.)
+- **To**: `username@example.com` (Replace `username` with the `username` given in the Connection Details Panel on the right hand side.)
 
-- Subject line: Upload Completed - Online Fruit Store
+- **Subject line**: Upload Completed - Online Fruit Store
 
-- E-mail Body: All fruits are uploaded to our website successfully. A detailed list is attached to this email.
+- **E-mail Body**: All fruits are uploaded to our website successfully. A detailed list is attached to this email.
 
-- Attachment: Attach the path to the file `processed.pdf`
+- **Attachment**: Attach the path to the file `processed.pdf`
 
 Once you have finished editing the `report_email.py` script, save the file by typing Ctrl-o, Enter key, and Ctrl-x.
 
@@ -723,13 +723,13 @@ Now you should be able to see your inbox, with one unread email. Open the mail b
 
 This is the last part of the lab, where you will have to write a Python script named `health_check.py` that will run in the background monitoring some of your system statistics: CPU usage, disk space, available memory and name resolution. Moreover, this Python script should send an email if there are problems, such as:
 
-- Report an error if CPU usage is over 80%
+- Report an error if *CPU* usage is over 80%
 
-- Report an error if available disk space is lower than 20%
+- Report an error if available *disk space* is lower than 20%
 
-- Report an error if available memory is less than 500MB
+- Report an error if available *memory* is less than 500MB
 
-- Report an error if the hostname "localhost" cannot be resolved to "127.0.0.1"
+- Report an error if the *hostname "localhost"* cannot be resolved to "127.0.0.1"
 
 Create a python script named `health_check.py` using the nano editor:
 
@@ -747,11 +747,11 @@ Import the necessary Python libraries (eg. `shutil`, `psutil`) to write this scr
 
 Complete the script to check the system statistics every 60 seconds, and in event of any issues detected among the ones mentioned above, an email should be sent with the following content:
 
-- From: `automation@example.com`
+- **From**: `automation@example.com`
 
-- To: `username@example.com` (Replace username with the username given in the Connection Details Panel on the right hand side.)
+- **To**: `username@example.com` (Replace username with the username given in the Connection Details Panel on the right hand side.)
 
-- Subject line:
+- **Subject line**:
 
   - CPU usage is over 80% -> Error - CPU usage is over 80%
 
@@ -761,9 +761,9 @@ Complete the script to check the system statistics every 60 seconds, and in even
 
   - Hostname "localhost" cannot be resolved to "127.0.0.1" -> Error - localhost cannot be resolved to 127.0.0.1
 
-- E-mail Body: Please check your system and resolve the issue as soon as possible.
+- **E-mail Body**: Please check your system and resolve the issue as soon as possible.
 
-Note: You must be careful while defining the `generate_email()` method in the `emails.py` script or you can create a separate `generate_error_report()` method for handling non-attachment email.
+*Note*: You must be careful while defining the `generate_email()` method in the `emails.py` script or you can create a separate `generate_error_report()` method for handling non-attachment email.
 
 **`health_check.py`**
 ```python
