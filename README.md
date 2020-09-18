@@ -23,7 +23,7 @@ Finally, in parallel to the automation running, we want to check the health of t
 
 
 ## Table of Contents
-- [Fetching supplier data](#Fetchingsupplierdata)
+- [Fetching supplier data](#Fetching-supplier-data)
 - [Features](#features)
 - [Contributing](#contributing)
 - [Team](#team)
