@@ -22,8 +22,8 @@ Finally, in parallel to the automation running, we want to check the health of t
 - Write a script to check the health status of the system
 
 
-## Table of Contents (Optional)
-- [Installation](#installation)
+## Table of Contents
+- [Fetching supplier data](#Fetching supplier data)
 - [Features](#features)
 - [Contributing](#contributing)
 - [Team](#team)
