@@ -25,7 +25,7 @@ Finally, in parallel to the automation running, we want to **check the health of
 - [System's health check and report](#Systems-health-check-and-report)
 
 ### Source Code
-You can find all source code files (Python) at [here](https://github.com/buiquangbao/automation-using-python/tree/master/Automating%20Real-World%20Tasks%20with%20Python)
+You can find all my source code files (Python) at [here](https://github.com/buiquangbao/automation-using-python/tree/master/Automating%20Real-World%20Tasks%20with%20Python).
 
 ## Fetching supplier data
 
@@ -161,7 +161,7 @@ Note: The raw images from `images` subdirectory contains alpha transparency laye
 
 After processing the images, save them in the same path `~/supplier-data/images`, with a `JPEG` extension.
 
-`changeImage.py`
+**`changeImage.py`**
 ```python
 #!/usr/bin/env python3
 
@@ -254,7 +254,7 @@ nano ~/supplier_image_upload.py
 
 Complete the script with the same technique as used in the file `example_upload.py`.
 
-`supplier_image_upload.py`
+**`supplier_image_upload.py`**
 ```python
 #!/usr/bin/env python3
 
@@ -350,7 +350,7 @@ The `image_name` field will allow the system to find the image associated with t
 
 Iterate over all the fruits and use post method from Python `requests` library to upload all the data to the URL `http://[linux-instance-external-IP]/fruits`
 
-`run.py`
+**`run.py`**
 ```python
 #!/usr/bin/env python3
 
@@ -455,7 +455,7 @@ Add a shebang line in the first line.
 
 Using the `reportlab` Python library, define the method `generate_report` to build the `PDF` reports. We have already covered how to generate `PDF` reports in an earlier lesson; you will want to use similar concepts to create a `PDF` report named `processed.pdf`.
 
-`reports.py`
+**`reports.py`**
 ```python
 #!/usr/bin/env python3
 
@@ -517,7 +517,7 @@ You will need to pass the following arguments to the `reports.generate_report` m
 reports.generate_report(attachment, title, paragraph)
 ```
 
-`report_email.py`
+**`report_email.py`**
 ```python
 #!/usr/bin/env python3
 
@@ -578,7 +578,7 @@ nano ~/emails.py
 
 Define `generate_email` and `send_email` methods by importing necessary libraries.
 
-`emails.py`
+**`emails.py`**
 ```python
 #!/usr/bin/env python3
 
@@ -650,7 +650,7 @@ Use the following details to pass the parameters to `emails.generate_email()`:
 
 Once you have finished editing the `report_email.py` script, save the file by typing Ctrl-o, Enter key, and Ctrl-x.
 
-`report_email.py`
+**`report_email.py`**
 ```python
 #!/usr/bin/env python3
 
@@ -765,7 +765,7 @@ Complete the script to check the system statistics every 60 seconds, and in even
 
 Note: You must be careful while defining the `generate_email()` method in the `emails.py` script or you can create a separate `generate_error_report()` method for handling non-attachment email.
 
-`health_check.py`
+**`health_check.py`**
 ```python
 #!/usr/bin/env python3
 
