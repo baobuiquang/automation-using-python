@@ -1,8 +1,7 @@
-![](https://communityblog.fedoraproject.org/wp-content/uploads/2015/11/Python-logo.png)
 
 # Automation using Python
 
-### Problem:
+## Problem:
 
 You work for an online fruits store, and you need to develop a system that will update the catalog information with data provided by your suppliers. The suppliers send the data as large images with an associated description of the products in two files (.TIF for the image and .txt for the description). The images need to be converted to smaller jpeg images and the text needs to be turned into an HTML file that shows the image and the product description. The contents of the HTML file need to be uploaded to a web service that is already running using Django. You also need to gather the name and weight of all fruits from the .txt files and use a Python request to upload it to your Django server.
 
@@ -12,7 +11,7 @@ Once the task is complete, the supplier should be notified with an email that in
 
 Finally, in parallel to the automation running, we want to check the health of the system and send an email if something goes wrong.
 
-### What to do:
+## What to do:
 
 - Write a script that summarizes and processes sales data into different categories
 
@@ -22,7 +21,18 @@ Finally, in parallel to the automation running, we want to check the health of t
 
 - Write a script to check the health status of the system
 
-### Fetching supplier data
+
+## Table of Contents (Optional)
+- [Installation](#installation)
+- [Features](#features)
+- [Contributing](#contributing)
+- [Team](#team)
+- [FAQ](#faq)
+- [Support](#support)
+- [License](#license)
+
+
+## Fetching supplier data
 
 You'll first need to get the information from the supplier that is currently stored in a Google Drive file. The supplier has sent data as large images with an associated description of the products in two files (.TIF for the image and .txt for the description).
 
@@ -130,7 +140,7 @@ Apple is one of the most nutritious and healthiest fruits. It is very rich in an
 
 The first line contains the name of the fruit followed by the weight of the fruit and finally the description of the fruit.
 
-### Working with supplier images
+## Working with supplier images
 
 In this section, you will write a Python script named `changeImage.py` to process the supplier images. You will be using the PIL library to update all images within `~/supplier-data/images` directory to the following specifications:
 
@@ -196,7 +206,7 @@ Output:
 /home/student-02-bc4a98210200/supplier-data/images/001.jpeg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 600x400, frames 3
 ```
 
-### Uploading images to web server
+## Uploading images to web server
 
 You have modified the fruit images through `changeImage.py` script. Now, you will have to upload these modified images to the web server that is handling the fruit catalog. To do that, you'll have to use the Python `requests` module to send the file contents to the `[linux-instance-IP-Address]/upload` URL.
 
@@ -286,7 +296,7 @@ Refresh the URL opened earlier, and now you should find all the images uploaded 
 
 ![Image](https://github.com/buiquangbao/automation-using-python/blob/master/assets/img03.png)
 
-### Uploading the descriptions
+## Uploading the descriptions
 
 The Django server is already set up to show the fruit catalog for your company. You can visit the main website by entering `linux-instance-IP-Address` in the URL bar or by removing `/media/images` from the existing URL opened earlier.
 
@@ -412,7 +422,7 @@ Now go to the main page of your website (by going to `http://[linux-instance-IP-
 
 ![Image](https://github.com/buiquangbao/automation-using-python/blob/master/assets/img08.png)
 
-### Generate a PDF report
+## Generate a PDF report
 
 Once the `images` and `descriptions` have been uploaded to the fruit store web-server, you will have to generate a PDF file to send to the supplier, indicating that the data was correctly processed. To generate PDF reports, you can use the `ReportLab` library. The content of the report should look like this:
 
@@ -561,7 +571,7 @@ if __name__ == "__main__":
 
 Once you have completed the `report_email.py` script. Save the file by typing Ctrl-o, Enter key, and Ctrl-x.
 
-### Send report through email
+## Send report through email
 
 Once the PDF is generated, you need to send the email using the `emails.generate_email()` and `emails.send_email()` methods.
 
@@ -667,7 +677,7 @@ Now you should be able to see your inbox, with one unread email. Open the mail b
 
 ![Image](https://github.com/buiquangbao/automation-using-python/blob/master/assets/img11.png)
 
-### Health check
+## Health check
 
 This is the last part of the lab, where you will have to write a Python script named `health_check.py` that will run in the background monitoring some of your system statistics: CPU usage, disk space, available memory and name resolution. Moreover, this Python script should send an email if there are problems, such as:
 
