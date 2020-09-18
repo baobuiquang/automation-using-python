@@ -556,12 +556,12 @@ if __name__ == "__main__":
 	reports.generate_report(attachment, title, paragraph)
 
 	# Send the email
-	subject = "Upload Completed - Online Fruit Store"
-	sender = "automation@example.com"
-	receiver = "{}@example.com".format(os.environ.get('USER'))
-	body = "All fruits are uploaded to our website successfully. A detailed list is attached to this email."
-	message = emails.generate_email(sender, receiver, subject, body, attachment)
-	emails.send_email(message)
+	# subject = "Upload Completed - Online Fruit Store"
+	# sender = "automation@example.com"
+	# receiver = "{}@example.com".format(os.environ.get('USER'))
+	# body = "All fruits are uploaded to our website successfully. A detailed list is attached to this email."
+	# message = emails.generate_email(sender, receiver, subject, body, attachment)
+	# emails.send_email(message)
 ```
 
 Once you have completed the `report_email.py` script. Save the file by typing Ctrl-o, Enter key, and Ctrl-x.
