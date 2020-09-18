@@ -157,7 +157,7 @@ Note: The raw images from `images` subdirectory contains alpha transparency laye
 After processing the images, save them in the same path `~/supplier-data/images`, with a JPEG extension.
 
 `changeImage.py`
-```
+```python
 #!/usr/bin/env python3
 
 import os
@@ -250,7 +250,7 @@ nano ~/supplier_image_upload.py
 Complete the script with the same technique as used in the file `example_upload.py`.
 
 `supplier_image_upload.py`
-```
+```python
 #!/usr/bin/env python3
 
 import requests
@@ -451,7 +451,7 @@ Add a shebang line in the first line.
 Using the `reportlab` Python library, define the method `generate_report` to build the PDF reports. We have already covered how to generate PDF reports in an earlier lesson; you will want to use similar concepts to create a PDF report named processed.pdf.
 
 `reports.py`
-```
+```python
 #!/usr/bin/env python3
 
 from reportlab.platypus import SimpleDocTemplate
@@ -513,7 +513,7 @@ reports.generate_report(attachment, title, paragraph)
 ```
 
 `report_email.py`
-```
+```python
 #!/usr/bin/env python3
 
 import reports
@@ -574,7 +574,7 @@ nano ~/emails.py
 Define `generate_email` and `send_email` methods by importing necessary libraries.
 
 `emails.py`
-```
+```python
 #!/usr/bin/env python3
 
 import email.message
@@ -714,8 +714,8 @@ Complete the script to check the system statistics every 60 seconds, and in even
 Note: There is no attachment file here, so you must be careful while defining the `generate_email()` method in the emails.py script or you can create a separate `generate_error_report()` method for handling non-attachment email.
 
 `health_check.py`
-```
-#! /usr/bin/env python3
+```python
+#!/usr/bin/env python3
 
 import os
 import shutil
