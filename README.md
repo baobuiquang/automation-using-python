@@ -2,7 +2,7 @@
 # Automation using Python
 
 ![GitHub top language](https://img.shields.io/github/languages/top/buiquangbao/automation-using-python?style=flat-square)
-[![Status](https://img.shields.io/badge/Status-Complete-<COLOR>.svg)](https://shields.io?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Complete-<COLOR>.svg?style=flat-square)
 
 ## Problem
 
