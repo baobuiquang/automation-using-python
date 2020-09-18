@@ -24,6 +24,9 @@ Finally, in parallel to the automation running, we want to **check the health of
 - [Send report through email](#Send-report-through-email)
 - [System's health check and report](#Systems-health-check-and-report)
 
+### Source Code
+You can find all source code files (Python) at [here](https://github.com/buiquangbao/automation-using-python/tree/master/Automating%20Real-World%20Tasks%20with%20Python)
+
 ## Fetching supplier data
 
 You'll first need to get the information from the supplier that is currently stored in a Google Drive file. The supplier has sent data as large images with an associated description of the products in two files (`.TIF` for the image and `.txt` for the description).
