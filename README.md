@@ -233,7 +233,7 @@ Run the `run.py` script:
 
 Now go to the main page of your website (by going to `http://[linux-instance-IP-Address]/`) and check out how the new fruits appear.
 
-### Generate a PDF report and send it through email
+### Generate a PDF report
 
 Once the `images` and `descriptions` have been uploaded to the fruit store web-server, you will have to generate a PDF file to send to the supplier, indicating that the data was correctly processed. To generate PDF reports, you can use the `ReportLab` library. The content of the report should look like this:
 
@@ -256,8 +256,6 @@ weight: 200 lbs
 
 ...
 ```
-
-##### Script to generate a PDF report:
 
 Create a script reports.py to generate PDF report to supplier using the nano editor:
 
@@ -349,9 +347,9 @@ Use the following details to pass the parameters to `emails.generate_email()`:
 
 
 
-From: automation@example.com
+From: `automation@example.com`
 
-To: username@example.com
+To: `username@example.com`
 
 Replace `username` with the `username` given in the Connection Details Panel on the right hand side.
 
@@ -415,9 +413,9 @@ Complete the script to check the system statistics every 60 seconds, and in even
 
 
 
-From: automation@example.com
+From: `automation@example.com`
 
-To: username@example.com
+To: `username@example.com`
 
 Replace username with the username given in the Connection Details Panel on the right hand side.
 
