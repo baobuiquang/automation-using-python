@@ -24,12 +24,12 @@ Finally, in parallel to the automation running, we want to check the health of t
 
 ## Table of Contents
 - [Fetching supplier data](#Fetching-supplier-data)
-- [Features](#features)
-- [Contributing](#contributing)
-- [Team](#team)
-- [FAQ](#faq)
-- [Support](#support)
-- [License](#license)
+- [Working with supplier images](#Working-with-supplier-images)
+- [Uploading images to web server](#Uploading-images-to-web-server)
+- [Uploading the descriptions](#Uploading-the-descriptions)
+- [Generate a PDF report](#Generate-a-PDF-report)
+- [Send report through email](#Send-report-through-email)
+- [System's health check and report](#System's-health-check-and-report)
 
 
 ## Fetching supplier data
@@ -677,7 +677,7 @@ Now you should be able to see your inbox, with one unread email. Open the mail b
 
 ![Image](https://github.com/buiquangbao/automation-using-python/blob/master/assets/img11.png)
 
-## Health check
+## System's health check and report
 
 This is the last part of the lab, where you will have to write a Python script named `health_check.py` that will run in the background monitoring some of your system statistics: CPU usage, disk space, available memory and name resolution. Moreover, this Python script should send an email if there are problems, such as:
 
