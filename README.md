@@ -5,21 +5,11 @@
 
 You work for an online fruits store, and you need to develop **a system that will update the catalog information with data provided by your suppliers**. The suppliers send the data as large images with an associated description of the products in two files (`.TIF` for the image and `.txt` for the description). The images need to be converted to smaller `.jpeg` images and the text needs to be turned into an `HTML` file that shows the image and the product description. The contents of the HTML file need to be uploaded to a web service that is already running using Django. You also need to gather the name and weight of all fruits from the `.txt` files and use a Python request to upload it to your Django server.
 
-You will create a Python script that will process the images and descriptions and then update your company's online website to add the new products.
+You will create a Python script that will **process the images and descriptions** and then **update your company's online website to add the new products**.
 
-Once the task is complete, the supplier should be notified with an email that indicates the total weight of fruit (in lbs) that were uploaded. The email should have a PDF attached with the name of the fruit and its total weight (in lbs).
+Once the task is complete, **the supplier should be notified with an email** that indicates the total weight of fruit that were uploaded. The email should have a **`.PDF` attached** with the name of the fruit and its total weight.
 
-Finally, in parallel to the automation running, we want to check the health of the system and send an email if something goes wrong.
-
-## What to do
-
-- Write a script that summarizes and processes sales data into different categories
-
-- Generate a PDF using Python
-
-- Automatically send a PDF by email
-
-- Write a script to check the health status of the system
+Finally, in parallel to the automation running, we want to **check the health of the system and send an email if something goes wrong**.
 
 
 ## Table of Contents
@@ -34,7 +24,7 @@ Finally, in parallel to the automation running, we want to check the health of t
 
 ## Fetching supplier data
 
-You'll first need to get the information from the supplier that is currently stored in a Google Drive file. The supplier has sent data as large images with an associated description of the products in two files (.TIF for the image and .txt for the description).
+You'll first need to get the information from the supplier that is currently stored in a Google Drive file. The supplier has sent data as large images with an associated description of the products in two files (`.TIF` for the image and `.txt` for the description).
 
 Here, you'll find two script files `download_drive_file.sh` and the `example_upload.py` files. You can view it by using the following command.
 
@@ -53,7 +43,7 @@ To download the file from the supplier onto our linux-instance virtual machine w
 sudo chmod +x ~/download_drive_file.sh
 ```
 
-Run the download_drive_file.sh shell script with the following arguments:
+Run the `download_drive_file.sh` shell script with the following arguments:
 
 ```
 ./download_drive_file.sh 1LePo57dJcgzoK4uiI_48S01Etck7w_5f supplier-data.tar.gz
@@ -142,11 +132,11 @@ The first line contains the name of the fruit followed by the weight of the frui
 
 ## Working with supplier images
 
-In this section, you will write a Python script named `changeImage.py` to process the supplier images. You will be using the PIL library to update all images within `~/supplier-data/images` directory to the following specifications:
+In this section, you will write a Python script named `changeImage.py` to process the supplier images. You will be using the `PIL` library to update all images within `~/supplier-data/images` directory to the following specifications:
 
-- Size: Change image resolution from 3000x2000 to 600x400 pixel
+- **Size**: Change image resolution from **3000x2000** to **600x400** pixel
 
-- Format: Change image format from .TIFF to .JPEG
+- **Format**: Change image format from `.TIFF` to `.JPEG`
 
 Create and open the file using `nano` editor.
 
@@ -164,7 +154,7 @@ This is the challenge section, where you will be writing a script that satisfies
 
 Note: The raw images from `images` subdirectory contains alpha transparency layers. So, it is better to first convert `RGBA` 4-channel format to `RGB` 3-channel format before processing the images. Use `convert("RGB")` method for converting `RGBA` to `RGB` image.
 
-After processing the images, save them in the same path `~/supplier-data/images`, with a JPEG extension.
+After processing the images, save them in the same path `~/supplier-data/images`, with a `JPEG` extension.
 
 `changeImage.py`
 ```python
@@ -189,7 +179,7 @@ Grant executable permissions to the `changeImage.py` script.
 sudo chmod +x ~/changeImage.py
 ```
 
-Now run the changeImage.py script:
+Now run the `changeImage.py` script:
 
 ```
 ./changeImage.py
@@ -208,7 +198,7 @@ Output:
 
 ## Uploading images to web server
 
-You have modified the fruit images through `changeImage.py` script. Now, you will have to upload these modified images to the web server that is handling the fruit catalog. To do that, you'll have to use the Python `requests` module to send the file contents to the `[linux-instance-IP-Address]/upload` URL.
+You have modified the fruit images through `changeImage.py` script. Now, you will have to upload these modified images to the web server that is handling the fruit catalog. To do that, you'll have to use the Python **`requests` module** to send the file contents to the `[linux-instance-IP-Address]/upload` URL.
 
 Copy the `external IP address` of your instance from the Connection Details Panel on the left side and enter the IP address in a new web browser tab. This opens a web page displaying the text "Fruit Catalog".
 
@@ -239,19 +229,19 @@ Grant executable permission to the `example_upload.py` script.
 sudo chmod +x ~/example_upload.py
 ```
 
-Execute the example_upload.py script, which will upload the images.
+Execute the `example_upload.py` script, which will upload the images.
 
 ```
 ./example_upload.py
 ```
 
-Now check out that the file icon.sheet.png was uploaded to the web server by visiting the URL `[linux-instance-IP-Address]/media/images/`, followed by clicking on the file name.
+Now check out that the file `icon.sheet.png` was uploaded to the web server by visiting the URL `[linux-instance-IP-Address]/media/images/`, followed by clicking on the file name.
 
 ![Image](https://github.com/buiquangbao/automation-using-python/blob/master/assets/img02.png)
 
 In a similar way, you are going to write a script named `supplier_image_upload.py` that takes the jpeg images from the `supplier-data/images` directory that you've processed previously and uploads them to the web server fruit catalog.
 
-Use the nano editor to create a file named `supplier_image_upload.py`:
+Use the `nano` editor to create a file named `supplier_image_upload.py`:
 
 ```
 nano ~/supplier_image_upload.py
@@ -286,7 +276,7 @@ Grant executable permission to the `changeImage.py` script.
 sudo chmod +x ~/supplier_image_upload.py
 ```
 
-Run the changeImage.py script.
+Run the `changeImage.py` script.
 
 ```
 ./supplier_image_upload.py
@@ -298,7 +288,7 @@ Refresh the URL opened earlier, and now you should find all the images uploaded 
 
 ## Uploading the descriptions
 
-The Django server is already set up to show the fruit catalog for your company. You can visit the main website by entering `linux-instance-IP-Address` in the URL bar or by removing `/media/images` from the existing URL opened earlier.
+The Django server **is already set up** to show the fruit catalog for your company. You can visit the main website by entering `linux-instance-IP-Address` in the URL bar or by removing `/media/images` from the existing URL opened earlier.
 
 Check out the Django REST framework, by navigating to `linux-instance-IP-Address/fruits` in your browser.
 
@@ -316,9 +306,9 @@ After entering the above data into the content field click on the POST button. N
 
 ![Image](https://github.com/buiquangbao/automation-using-python/blob/master/assets/img06.png)
 
-To add fruit images and their descriptions from the supplier on the fruit catalog web-server, create a new Python script that will automatically POST the fruit images and their respective description in JSON format.
+To add fruit images and their descriptions from the supplier on the fruit catalog web-server, create a new Python script that will automatically POST the fruit images and their respective description in `JSON` format.
 
-Write a Python script named `run.py` to process the text files (001.txt, 003.txt ...) from the `supplier-data/descriptions` directory. The script should turn the data into a JSON dictionary by adding all the required fields, including the image associated with the fruit (image_name), and uploading it to `http://[linux-instance-external-IP]/fruits` using the Python requests library.
+Write a Python script named `run.py` to process the text files (`001.txt`, `003.txt` ...) from the `supplier-data/descriptions` directory. The script should turn the data into a `JSON` dictionary by adding all the required fields, including the image associated with the fruit (`image_name`), and uploading it to `http://[linux-instance-external-IP]/fruits` using the Python `requests` library.
 
 Create `run.py` using the nano editor:
 
@@ -337,27 +327,27 @@ import os
 import requests
 ```
 
-Now, you'll have to process the .txt files (named 001.txt, 002.txt, ...) in the `supplier-data/descriptions/` directory and save them in a data structure so that you can then upload them via JSON. Note that all files are written in the following format, with each piece of information on its own line:
+Now, you'll have to process the `.txt` files (named `001.txt`, `002.txt`, ...) in the `supplier-data/descriptions/` directory and save them in a data structure so that you can then upload them via `JSON`. Note that all files are written in the following format, with each piece of information on its own line:
 
 - name
 
-- weight (in lbs)
+- weight
 
 - description
 
-The data model in the Django application `fruit` has the following fields: `name`, `weight`, `description` and `image_name`. The `weight` field is defined as an integer field. So when you process the weight information of the fruit from the .txt file, you need to convert it into an integer. For example if the weight is "500 lbs", you need to drop "lbs" and convert "500" to an integer.
+The data model in the Django application `fruit` has the following fields: `name`, `weight`, `description` and `image_name`. The `weight` field is defined as an integer field. So when you process the `weight` information of the fruit from the `.txt` file, you need to convert it into an integer. For example if the `weight` is "500 lbs", you need to drop "lbs" and convert "500" to an integer.
 
-The `image_name` field will allow the system to find the image associated with the fruit. Don't forget to add all fields, including the `image_name`! The final JSON object should be similar to:
+The `image_name` field will allow the system to find the image associated with the fruit. Don't forget to add all fields, including the `image_name`! The final `JSON` object should be similar to:
 
 `
 {"name": "Watermelon", "weight": 500, "description": "Watermelon is good for relieving heat, eliminating annoyance and quenching thirst. It contains a lot of water, which is good for relieving the symptoms of acute fever immediately. The sugar and salt contained in watermelon can diuretic and eliminate kidney inflammation. Watermelon also contains substances that can lower blood pressure.", "image_name": "010.jpeg"}
 `
 
-Iterate over all the fruits and use post method from Python requests library to upload all the data to the URL `http://[linux-instance-external-IP]/fruits`
+Iterate over all the fruits and use post method from Python `requests` library to upload all the data to the URL `http://[linux-instance-external-IP]/fruits`
 
 `run.py`
-```
-#! /usr/bin/env python3
+```python
+#!/usr/bin/env python3
 
 import os 
 import requests
@@ -424,7 +414,7 @@ Now go to the main page of your website (by going to `http://[linux-instance-IP-
 
 ## Generate a PDF report
 
-Once the `images` and `descriptions` have been uploaded to the fruit store web-server, you will have to generate a PDF file to send to the supplier, indicating that the data was correctly processed. To generate PDF reports, you can use the `ReportLab` library. The content of the report should look like this:
+Once the `images` and `descriptions` have been uploaded to the fruit store web-server, you will have to generate a `PDF` file to send to the supplier, indicating that the data was correctly processed. To generate `PDF` reports, you can use the `ReportLab` library. The content of the report should look like this:
 
 ```
 Processed Update on <Today's date>
@@ -446,7 +436,7 @@ weight: 200 lbs
 ...
 ```
 
-Create a script reports.py to generate PDF report to supplier using the nano editor:
+Create a script `reports.py` to generate `PDF` report to supplier using the `nano` editor:
 
 ```
 nano ~/reports.py
@@ -458,7 +448,7 @@ Add a shebang line in the first line.
 #!/usr/bin/env python3
 ```
 
-Using the `reportlab` Python library, define the method `generate_report` to build the PDF reports. We have already covered how to generate PDF reports in an earlier lesson; you will want to use similar concepts to create a PDF report named processed.pdf.
+Using the `reportlab` Python library, define the method `generate_report` to build the `PDF` reports. We have already covered how to generate `PDF` reports in an earlier lesson; you will want to use similar concepts to create a `PDF` report named `processed.pdf`.
 
 `reports.py`
 ```python
@@ -516,7 +506,7 @@ Once you have completed this, call the main method which will process the data a
 if __name__ == "__main__":
 ```
 
-You will need to pass the following arguments to the `reports.generate_report` method: the text description processed from the text files as the `paragraph` argument, the report title as the `title` argument, and the file path of the PDF to be generated as the `attachment` argument (use '`/tmp/processed.pdf`')
+You will need to pass the following arguments to the `reports.generate_report` method: the text description processed from the text files as the `paragraph` argument, the report title as the `title` argument, and the file path of the `PDF` to be generated as the `attachment` argument (use '`/tmp/processed.pdf`')
 
 ```
 reports.generate_report(attachment, title, paragraph)
@@ -575,7 +565,7 @@ Once you have completed the `report_email.py` script. Save the file by typing Ct
 
 Once the PDF is generated, you need to send the email using the `emails.generate_email()` and `emails.send_email()` methods.
 
-Create `emails.py` using the nano editor using the following command:
+Create `emails.py` using the `nano` editor using the following command:
 
 ```
 nano ~/emails.py
@@ -635,7 +625,7 @@ Now, open the `report_email.py` script using the nano editor:
 nano ~/report_email.py
 ```
 
-Once you define the `generate_email` and `send_email` methods, call the methods under the main method after creating the PDF report:
+Once you define the `generate_email` and `send_email` methods, call the methods under the main method after creating the `PDF` report:
 
 ```
 if __name__ == "__main__":
@@ -655,6 +645,53 @@ Use the following details to pass the parameters to `emails.generate_email()`:
 
 Once you have finished editing the `report_email.py` script, save the file by typing Ctrl-o, Enter key, and Ctrl-x.
 
+`report_email.py`
+```python
+#!/usr/bin/env python3
+
+import reports
+import emails
+import os 
+from datetime import date
+
+BASEPATH_SUPPLIER_TEXT_DES = os.path.expanduser('~') + '/supplier-data/descriptions/'
+list_text_files = os.listdir(BASEPATH_SUPPLIER_TEXT_DES)
+
+report = []
+
+def process_data(data):
+	for item in data:
+		report.append("name: {}<br/>weight: {}\n".format(item[0], item[1]))
+	return report
+
+text_data = []
+for text_file in list_text_files:
+	with open(BASEPATH_SUPPLIER_TEXT_DES + text_file, 'r') as f:
+		text_data.append([line.strip() for line in f.readlines()])
+		f.close()
+
+if __name__ == "__main__":
+
+	summary = process_data(text_data)
+
+	# Generate a paragraph that contains the necessary summary
+	paragraph = "<br/><br/>".join(summary)
+
+	# Generate the PDF report
+	title = "Processed Update on {}\n".format(date.today().strftime("%B %d, %Y"))
+	attachment = "/tmp/processed.pdf"
+
+	reports.generate_report(attachment, title, paragraph)
+
+	# Send the email
+	subject = "Upload Completed - Online Fruit Store"
+	sender = "automation@example.com"
+	receiver = "{}@example.com".format(os.environ.get('USER'))
+	body = "All fruits are uploaded to our website successfully. A detailed list is attached to this email."
+	message = emails.generate_email(sender, receiver, subject, body, attachment)
+	emails.send_email(message)
+```
+
 Grant executable permissions to the script `report_email.py`.
 
 ```
@@ -669,7 +706,7 @@ Run the `report_email.py` script.
 
 Now, check the webmail by visiting `[linux-instance-external-IP]/webmail`. Here, you'll need a login to roundcube using the username and password mentioned in the Connection Details Panel on the left hand side, followed by clicking Login.
 
-Now you should be able to see your inbox, with one unread email. Open the mail by double clicking on it. There should be a report in PDF format attached to the mail. View the report by opening it.
+Now you should be able to see your inbox, with one unread email. Open the mail by double clicking on it. There should be a report in `PDF` format attached to the mail. View the report by opening it.
 
 ![Image](https://github.com/buiquangbao/automation-using-python/blob/master/assets/img09.png)
 
@@ -721,7 +758,7 @@ Complete the script to check the system statistics every 60 seconds, and in even
 
 - E-mail Body: Please check your system and resolve the issue as soon as possible.
 
-Note: There is no attachment file here, so you must be careful while defining the `generate_email()` method in the emails.py script or you can create a separate `generate_error_report()` method for handling non-attachment email.
+Note: You must be careful while defining the `generate_email()` method in the `emails.py` script or you can create a separate `generate_error_report()` method for handling non-attachment email.
 
 `health_check.py`
 ```python
@@ -787,7 +824,7 @@ Grant executable permissions to the script `health_check.py`.
 sudo chmod +x ~/health_check.py
 ```
 
-Run the file.
+Run `health_check.py`
 
 ```
 ./health_check.py
@@ -827,7 +864,7 @@ Next, call the tool using a good number of CPUs to fully load our CPU resources:
 stress --cpu 8
 ```
 
-Allow the stress test to run, as it will maximize our CPU utilization. Now run `health_check.py` by opening another SSH connection to the `linux-instance`. Navigate to `Accessing the virtual machine` on the navigation pane on the right-hand side to open another connection to the instance.
+Allow the stress test to run, as it will maximize our CPU utilization. Now run `health_check.py` by opening **another SSH connection** to the `linux-instance`. Navigate to `Accessing the virtual machine` on the navigation pane on the right-hand side to open another connection to the instance.
 
 Now run the script:
 
@@ -842,6 +879,7 @@ Check your inbox for any new email.
 ![Image](https://github.com/buiquangbao/automation-using-python/blob/master/assets/img13.png)
 
 Close the `stress --cpu` command by clicking Ctrl-c.
+
 
 
 
