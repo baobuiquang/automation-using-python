@@ -1,3 +1,5 @@
+![](https://communityblog.fedoraproject.org/wp-content/uploads/2015/11/Python-logo.png)
+
 # Automation using Python
 
 ### Problem:
@@ -12,13 +14,13 @@ Finally, in parallel to the automation running, we want to check the health of t
 
 ### What to do:
 
-Write a script that summarizes and processes sales data into different categories
+- Write a script that summarizes and processes sales data into different categories
 
-Generate a PDF using Python
+- Generate a PDF using Python
 
-Automatically send a PDF by email
+- Automatically send a PDF by email
 
-Write a script to check the health status of the system
+- Write a script to check the health status of the system
 
 ### Fetching supplier data
 
@@ -68,9 +70,9 @@ The first line contains the name of the fruit followed by the weight of the frui
 
 In this section, you will write a Python script named `changeImage.py` to process the supplier images. You will be using the PIL library to update all images within `~/supplier-data/images` directory to the following specifications:
 
-Size: Change image resolution from 3000x2000 to 600x400 pixel
+- Size: Change image resolution from 3000x2000 to 600x400 pixel
 
-Format: Change image format from .TIFF to .JPEG
+- Format: Change image format from .TIFF to .JPEG
 
 Create and open the file using `nano` editor.
 
@@ -201,11 +203,11 @@ import requests
 
 Now, you'll have to process the .txt files (named 001.txt, 002.txt, ...) in the `supplier-data/descriptions/` directory and save them in a data structure so that you can then upload them via JSON. Note that all files are written in the following format, with each piece of information on its own line:
 
-name
+- name
 
-weight (in lbs)
+- weight (in lbs)
 
-description
+- description
 
 The data model in the Django application `fruit` has the following fields: `name`, `weight`, `description` and `image_name`. The `weight` field is defined as an integer field. So when you process the weight information of the fruit from the .txt file, you need to convert it into an integer. For example if the weight is "500 lbs", you need to drop "lbs" and convert "500" to an integer.
 
@@ -347,17 +349,15 @@ Use the following details to pass the parameters to `emails.generate_email()`:
 
 
 
-From: `automation@example.com`
+- From: `automation@example.com`
 
-To: `username@example.com`
+- To: `username@example.com` (Replace `username` with the `username` given in the Connection Details Panel on the right hand side.)
 
-Replace `username` with the `username` given in the Connection Details Panel on the right hand side.
+- Subject line: Upload Completed - Online Fruit Store
 
-Subject line: Upload Completed - Online Fruit Store
+- E-mail Body: All fruits are uploaded to our website successfully. A detailed list is attached to this email.
 
-E-mail Body: All fruits are uploaded to our website successfully. A detailed list is attached to this email.
-
-Attachment: Attach the path to the file `processed.pdf`
+- Attachment: Attach the path to the file `processed.pdf`
 
 
 
@@ -385,13 +385,13 @@ This is the last part of the lab, where you will have to write a Python script n
 
 
 
-Report an error if CPU usage is over 80%
+- Report an error if CPU usage is over 80%
 
-Report an error if available disk space is lower than 20%
+- Report an error if available disk space is lower than 20%
 
-Report an error if available memory is less than 500MB
+- Report an error if available memory is less than 500MB
 
-Report an error if the hostname "localhost" cannot be resolved to "127.0.0.1"
+- Report an error if the hostname "localhost" cannot be resolved to "127.0.0.1"
 
 
 
@@ -413,23 +413,21 @@ Complete the script to check the system statistics every 60 seconds, and in even
 
 
 
-From: `automation@example.com`
+- From: `automation@example.com`
 
-To: `username@example.com`
+- To: `username@example.com` (Replace username with the username given in the Connection Details Panel on the right hand side.)
 
-Replace username with the username given in the Connection Details Panel on the right hand side.
+- Subject line:
 
-Subject line:
+  - CPU usage is over 80% -> Error - CPU usage is over 80%
 
-CPU usage is over 80% -> Error - CPU usage is over 80%
+  - Available disk space is lower than 20% -> Error - Available disk space is less than 20%
 
-Available disk space is lower than 20% -> Error - Available disk space is less than 20%
+  - Available memory is less than 500MB -> Error - Available memory is less than 500MB
 
-Available memory is less than 500MB -> Error - Available memory is less than 500MB
+  - Hostname "localhost" cannot be resolved to "127.0.0.1" -> Error - localhost cannot be resolved to 127.0.0.1
 
-Hostname "localhost" cannot be resolved to "127.0.0.1" -> Error - localhost cannot be resolved to 127.0.0.1
-
-E-mail Body: Please check your system and resolve the issue as soon as possible.
+- E-mail Body: Please check your system and resolve the issue as soon as possible.
 
 
 
