@@ -32,6 +32,11 @@ Here, you'll find two script files `download_drive_file.sh` and the `example_upl
 ls ~/
 ```
 
+Output:
+```
+download_drive_file.sh  example_upload.py
+```
+
 To download the file from the supplier onto our linux-instance virtual machine we will first grant executable permission to the `download_drive_file.sh` script.
 
 ```
@@ -44,6 +49,44 @@ Run the download_drive_file.sh shell script with the following arguments:
 ./download_drive_file.sh 1LePo57dJcgzoK4uiI_48S01Etck7w_5f supplier-data.tar.gz
 ```
 
+Output
+```
+--2020-09-18 12:46:00--  https://docs.google.com/uc?export=download&confirm=TeMk&id=1LePo57dJcgzoK4uiI_48S01Etck7w_5f
+Resolving docs.google.com (docs.google.com)... 172.217.214.102, 172.217.214.101, 172.217.214.100, ...
+Connecting to docs.google.com (docs.google.com)|172.217.214.102|:443... connected.
+HTTP request sent, awaiting response... 302 Moved Temporarily
+Location: https://doc-14-0k-docs.googleusercontent.com/docs/securesc/7sglqv0lufrg0jg1nr1k0fak41ir6d02/b27p4njbfud4as1h4a0s1a4p98a878jj/1600433100000/14227514949285994461/00904766887789157886Z/1LePo57dJcgzoK4uiI_48S01Etck7w_5f?e=download [following]
+--2020-09-18 12:46:00--  https://doc-14-0k-docs.googleusercontent.com/docs/securesc/7sglqv0lufrg0jg1nr1k0fak41ir6d02/b27p4njbfud4as1h4a0s1a4p98a878jj/1600433100000/14227514949285994461/00904766887789157886Z/1LePo57dJcgzoK4uiI_48S01Etck7w_5f?e=download
+Resolving doc-14-0k-docs.googleusercontent.com (doc-14-0k-docs.googleusercontent.com)... 64.233.191.132, 2607:f8b0:4001:c0c::84
+Connecting to doc-14-0k-docs.googleusercontent.com (doc-14-0k-docs.googleusercontent.com)|64.233.191.132|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://docs.google.com/nonceSigner?nonce=fkj4a4lidrnhs&continue=https://doc-14-0k-docs.googleusercontent.com/docs/securesc/7sglqv0lufrg0jg1nr1k0fak41ir6d02/b27p4njbfud4as1h4a0s1a4p98a878jj/1600433100000/14227514949285994461/00904766887789157886Z/1LePo57dJcgzoK4uiI_48S01Etck7w_5f?e%3Ddownload&hash=o3j78n6pplsmv1ohcabadojjd68fhv5j [following]
+--2020-09-18 12:46:00--  https://docs.google.com/nonceSigner?nonce=fkj4a4lidrnhs&continue=https://doc-14-0k-docs.googleusercontent.com/docs/securesc/7sglqv0lufrg0jg1nr1k0fak41ir6d02/b27p4njbfud4as1h4a0s1a4p98a878jj/1600433100000/14227514949285994461/00904766887789157886Z/1LePo57dJcgzoK4uiI_48S01Etck7w_5f?e%3Ddownload&hash=o3j78n6pplsmv1ohcabadojjd68fhv5j
+Connecting to docs.google.com (docs.google.com)|172.217.214.102|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://doc-14-0k-docs.googleusercontent.com/docs/securesc/7sglqv0lufrg0jg1nr1k0fak41ir6d02/b27p4njbfud4as1h4a0s1a4p98a878jj/1600433100000/14227514949285994461/00904766887789157886Z/1LePo57dJcgzoK4uiI_48S01Etck7w_5f?e=download&nonce=fkj4a4lidrnhs&user=00904766887789157886Z&hash=mf15mgbeqkb3pftoctspoimhgm2u9lko [following]
+--2020-09-18 12:46:00--  https://doc-14-0k-docs.googleusercontent.com/docs/securesc/7sglqv0lufrg0jg1nr1k0fak41ir6d02/b27p4njbfud4as1h4a0s1a4p98a878jj/1600433100000/14227514949285994461/00904766887789157886Z/1LePo57dJcgzoK4uiI_48S01Etck7w_5f?e=download&nonce=fkj4a4lidrnhs&user=00904766887789157886Z&hash=mf15mgbeqkb3pftoctspoimhgm2u9lko
+Connecting to doc-14-0k-docs.googleusercontent.com (doc-14-0k-docs.googleusercontent.com)|64.233.191.132|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/gzip]
+Saving to: ‘supplier-data.tar.gz’
+
+supplier-data.tar.gz      [    <=>                  ]  84.55M   128MB/s    in 0.7s
+
+2020-09-18 12:46:01 (128 MB/s) - ‘supplier-data.tar.gz’ saved [88653399]
+```
+
+Check again:
+
+```
+ls
+```
+
+Output:
+```
+download_drive_file.sh  example_upload.py  supplier-data.tar.gz
+```
+
 You have now downloaded a file named `supplier-data.tar.gz` containing the supplier's data. Let's extract the contents from this file using the following command:
 
 ```
@@ -52,16 +95,37 @@ tar xf ~/supplier-data.tar.gz
 
 This creates a directory named `supplier-data`, that contains subdirectories named `images` and `descriptions`.
 
+```
+ls
+```
+
+Output:
+```
+download_drive_file.sh  example_upload.py  supplier-data  supplier-data.tar.gz
+```
+
 List contents of the `supplier-data` directory using the following command:
 
 ```
 ls ~/supplier-data
 ```
 
+Output:
+```
+descriptions  images
+```
+
 The subdirectory images contain `images` of various fruits, while the `descriptions` subdirectory has text files containing the description of each fruit. You can have a look at any of these text files using `cat` command.
 
 ```
-cat ~/supplier-data/descriptions/007.txt
+cat ~/supplier-data/descriptions/001.txt
+```
+
+Output:
+```
+Apple
+500 lbs
+Apple is one of the most nutritious and healthiest fruits. It is very rich in antioxidants and dietary fiber. Moderate consumption can not only increase satiety, but also help promote bowel movements. Apple also contains minerals such as calcium and magnesium, which can help prevent and delay bone loss and maintain bone health. It is good for young and old. 
 ```
 
 The first line contains the name of the fruit followed by the weight of the fruit and finally the description of the fruit.
@@ -88,9 +152,24 @@ Add a shebang line in the first line.
 
 This is the challenge section, where you will be writing a script that satisfies the above objectives.
 
-Note: The raw images from `images` subdirectory contains alpha transparency layers. So, it is better to first convert RGBA 4-channel format to RGB 3-channel format before processing the images. Use convert("RGB") method for converting RGBA to RGB image.
+Note: The raw images from `images` subdirectory contains alpha transparency layers. So, it is better to first convert `RGBA` 4-channel format to `RGB` 3-channel format before processing the images. Use `convert("RGB")` method for converting `RGBA` to `RGB` image.
 
 After processing the images, save them in the same path `~/supplier-data/images`, with a JPEG extension.
+
+`changeImage.py`
+```
+#!/usr/bin/env python3
+
+import os
+from PIL import Image
+
+path = os.path.expanduser('~') + '/supplier-data/images/'
+for image in os.listdir(path):
+	if '.tiff' in image and '.' not in image[0]:
+		img = Image.open(path + image)
+		img.resize((600, 400)).convert("RGB").save(path + image.split('.')[0] + '.jpeg' , 'jpeg')
+		img.close()
+```
 
 Once you have completed editing the `changeImage.py` script, save the file by clicking Ctrl-o, Enter key, and Ctrl-x.
 
@@ -112,6 +191,11 @@ Now, let's check the specifications of the images you just updated. Open any ima
 file ~/supplier-data/images/003.jpeg
 ```
 
+Output:
+```
+/home/student-02-bc4a98210200/supplier-data/images/001.jpeg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 600x400, frames 3
+```
+
 ### Uploading images to web server
 
 You have modified the fruit images through `changeImage.py` script. Now, you will have to upload these modified images to the web server that is handling the fruit catalog. To do that, you'll have to use the Python `requests` module to send the file contents to the `[linux-instance-IP-Address]/upload` URL.
@@ -122,6 +206,19 @@ In the home directory, you'll have a script named `example_upload.py` to upload 
 
 ```
 cat ~/example_upload.py
+```
+
+Output:
+```
+#!/usr/bin/env python3
+import requests
+
+# This example shows how a file can be uploaded using
+# The Python Requests module
+
+url = "http://localhost/upload/"
+with open('/usr/share/apache2/icons/icon.sheet.png', 'rb') as opened:
+    r = requests.post(url, files={'file': opened})
 ```
 
 In this script, we are going to upload a sample image named `icon.sheet.png`.
@@ -140,6 +237,8 @@ Execute the example_upload.py script, which will upload the images.
 
 Now check out that the file icon.sheet.png was uploaded to the web server by visiting the URL `[linux-instance-IP-Address]/media/images/`, followed by clicking on the file name.
 
+- image
+
 In a similar way, you are going to write a script named `supplier_image_upload.py` that takes the jpeg images from the `supplier-data/images` directory that you've processed previously and uploads them to the web server fruit catalog.
 
 Use the nano editor to create a file named `supplier_image_upload.py`:
@@ -149,6 +248,25 @@ nano ~/supplier_image_upload.py
 ```
 
 Complete the script with the same technique as used in the file `example_upload.py`.
+
+`supplier_image_upload.py`
+```
+#!/usr/bin/env python3
+
+import requests
+import os
+
+# This example shows how a file can be uploaded using
+# The Python Requests module
+url = "http://localhost/upload/"
+IMAGE_DIR = os.path.expanduser('~') + '/supplier-data/images/'
+list_image = os.listdir(IMAGE_DIR)
+jpeg_images = [image_name for image_name in list_image if '.jpeg' in image_name]
+
+for image in jpeg_images:
+  with open(IMAGE_DIR + image, 'rb') as opened:
+    r = requests.post(url, files={'file': opened})
+```
 
 Once you have completed editing the `supplier_image_upload.py` script, save the file by typing Ctrl-o, Enter key, and Ctrl-x.
 
@@ -166,11 +284,15 @@ Run the changeImage.py script.
 
 Refresh the URL opened earlier, and now you should find all the images uploaded successfully.
 
+- image
+
 ### Uploading the descriptions
 
 The Django server is already set up to show the fruit catalog for your company. You can visit the main website by entering `linux-instance-IP-Address` in the URL bar or by removing `/media/images` from the existing URL opened earlier.
 
 Check out the Django REST framework, by navigating to `linux-instance-IP-Address/fruits` in your browser.
+
+- image
 
 Currently, there are no products in the fruit catalog web-server. You can create a test fruit entry by entering the following into the content field:
 
@@ -178,7 +300,11 @@ Currently, there are no products in the fruit catalog web-server. You can create
 {"name": "Test Fruit", "weight": 100, "description": "This is the description of my test fruit", "image_name": "icon.sheet.png"}
 `
 
+- image
+
 After entering the above data into the content field click on the POST button. Now visit the main page of your website (by going to `http://[linux-instance-external-IP]`), and the new test fruit you uploaded appears.
+
+- image
 
 To add fruit images and their descriptions from the supplier on the fruit catalog web-server, create a new Python script that will automatically POST the fruit images and their respective description in JSON format.
 
@@ -219,6 +345,39 @@ The `image_name` field will allow the system to find the image associated with t
 
 Iterate over all the fruits and use post method from Python requests library to upload all the data to the URL `http://[linux-instance-external-IP]/fruits`
 
+`run.py`
+```
+#! /usr/bin/env python3
+
+import os 
+import requests
+
+BASEPATH_SUPPLIER_TEXT_DES = os.path.expanduser('~') + '/supplier-data/descriptions/'
+list_text_files = os.listdir(BASEPATH_SUPPLIER_TEXT_DES)
+
+BASEPATH_SUPPLIER_IMAGE = os.path.expanduser('~') + '/supplier-data/images/'
+list_image_files = os.listdir(BASEPATH_SUPPLIER_IMAGE)
+list_images = [image_name for image_name in list_image_files if '.jpeg' in image_name]
+
+list = []
+for text_file in list_text_files:
+	with open(BASEPATH_SUPPLIER_TEXT_DES + text_file, 'r') as f:
+		data = {"name":f.readline().rstrip("\n"),
+                "weight":int(f.readline().rstrip("\n").split(' ')[0]),
+                "description":f.readline().rstrip("\n")}
+		for image_file in list_images:
+			if image_file.split('.')[0] in text_file.split('.')[0]:
+				data['image_name'] = image_file
+
+		list.append(data)
+
+for item in list:
+    resp = requests.post('http://127.0.0.1:80/fruits/', json=item)
+    if resp.status_code != 201:
+        raise Exception('POST error status={}'.format(resp.status_code))
+    print('Created feedback ID: {}'.format(resp.json()["id"]))
+```
+
 Once you complete editing `run.py` script, save the file by clicking Ctrl-o, Enter key, and Ctrl-x.
 
 Grant executable permission to the `run.py` script.
@@ -233,7 +392,23 @@ Run the `run.py` script:
 ./run.py
 ```
 
+Output:
+```
+Created feedback ID: 2
+Created feedback ID: 3
+Created feedback ID: 4
+Created feedback ID: 5
+Created feedback ID: 6
+Created feedback ID: 7
+Created feedback ID: 8
+Created feedback ID: 9
+Created feedback ID: 10
+Created feedback ID: 11
+```
+
 Now go to the main page of your website (by going to `http://[linux-instance-IP-Address]/`) and check out how the new fruits appear.
+
+- image
 
 ### Generate a PDF report
 
@@ -272,6 +447,24 @@ Add a shebang line in the first line.
 ```
 
 Using the `reportlab` Python library, define the method `generate_report` to build the PDF reports. We have already covered how to generate PDF reports in an earlier lesson; you will want to use similar concepts to create a PDF report named processed.pdf.
+
+`reports.py`
+```
+#!/usr/bin/env python3
+
+from reportlab.platypus import SimpleDocTemplate
+from reportlab.platypus import Paragraph, Spacer, Image
+from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.lib import colors
+
+def generate_report(filename, title, additional_info):
+	styles = getSampleStyleSheet()	report = SimpleDocTemplate(filename)
+	report_title = Paragraph(title, styles["h1"])
+	report_info = Paragraph(additional_info, styles["Normal"])
+	empty_line = Spacer(1,20)
+	report.build([report_title, empty_line, report_info])
+
+```
 
 Once you have finished editing the script `reports.py`, save the file by typing Ctrl-o, Enter key, and Ctrl-x.
 
@@ -317,6 +510,53 @@ You will need to pass the following arguments to the `reports.generate_report` m
 reports.generate_report(attachment, title, paragraph)
 ```
 
+`report_email.py`
+```
+#!/usr/bin/env python3
+
+import reports
+import emails
+import os 
+from datetime import date
+
+BASEPATH_SUPPLIER_TEXT_DES = os.path.expanduser('~') + '/supplier-data/descriptions/'
+list_text_files = os.listdir(BASEPATH_SUPPLIER_TEXT_DES)
+
+report = []
+
+def process_data(data):
+	for item in data:
+		report.append("name: {}<br/>weight: {}\n".format(item[0], item[1]))
+	return report
+
+text_data = []
+for text_file in list_text_files:
+	with open(BASEPATH_SUPPLIER_TEXT_DES + text_file, 'r') as f:
+		text_data.append([line.strip() for line in f.readlines()])
+		f.close()
+
+if __name__ == "__main__":
+
+	summary = process_data(text_data)
+
+	# Generate a paragraph that contains the necessary summary
+	paragraph = "<br/><br/>".join(summary)
+
+	# Generate the PDF report
+	title = "Processed Update on {}\n".format(date.today().strftime("%B %d, %Y"))
+	attachment = "/tmp/processed.pdf"
+
+	reports.generate_report(attachment, title, paragraph)
+
+	# Send the email
+	subject = "Upload Completed - Online Fruit Store"
+	sender = "automation@example.com"
+	receiver = "{}@example.com".format(os.environ.get('USER'))
+	body = "All fruits are uploaded to our website successfully. A detailed list is attached to this email."
+	message = emails.generate_email(sender, receiver, subject, body, attachment)
+	emails.send_email(message)
+```
+
 Once you have completed the `report_email.py` script. Save the file by typing Ctrl-o, Enter key, and Ctrl-x.
 
 ### Send report through email
@@ -330,6 +570,50 @@ nano ~/emails.py
 ```
 
 Define `generate_email` and `send_email` methods by importing necessary libraries.
+
+`emails.py`
+```
+#!/usr/bin/env python3
+
+import email.message
+import mimetypes
+import os.path
+import smtplib
+
+def generate_email(sender, recipient, subject, body, attachment_path):
+	"""Creates an email with an attachement."""
+	# Basic Email formatting
+	message = email.message.EmailMessage()
+	message["From"] = sender
+	message["To"] = recipient
+	message["Subject"] = subject
+	message.set_content(body)
+
+	# Process the attachment and add it to the email
+	attachment_filename = os.path.basename(attachment_path)
+	mime_type, _ = mimetypes.guess_type(attachment_path)
+	mime_type, mime_subtype = mime_type.split('/', 1)
+
+	with open(attachment_path, 'rb') as ap:
+		message.add_attachment(ap.read(), maintype=mime_type, subtype=mime_subtype, filename=attachment_filename)
+
+	return message
+
+def send_email(message):
+	"""Sends the message to the configured SMTP server."""
+	mail_server = smtplib.SMTP('localhost')
+	mail_server.send_message(message)
+	mail_server.quit()
+
+def generate_error_report(sender, recipient, subject, body):
+	message = email.message.EmailMessage()
+	message["From"] = sender
+	message["To"] = recipient
+	message["Subject"] = subject
+	message.set_content(body)
+
+	return message
+```
 
 Once you have finished editing the `emails.py` script, save the file by typing Ctrl-o, Enter key, and Ctrl-x.
 
@@ -347,8 +631,6 @@ if __name__ == "__main__":
 
 Use the following details to pass the parameters to `emails.generate_email()`:
 
-
-
 - From: `automation@example.com`
 
 - To: `username@example.com` (Replace `username` with the `username` given in the Connection Details Panel on the right hand side.)
@@ -358,8 +640,6 @@ Use the following details to pass the parameters to `emails.generate_email()`:
 - E-mail Body: All fruits are uploaded to our website successfully. A detailed list is attached to this email.
 
 - Attachment: Attach the path to the file `processed.pdf`
-
-
 
 Once you have finished editing the `report_email.py` script, save the file by typing Ctrl-o, Enter key, and Ctrl-x.
 
@@ -379,11 +659,15 @@ Now, check the webmail by visiting `[linux-instance-external-IP]/webmail`. Here,
 
 Now you should be able to see your inbox, with one unread email. Open the mail by double clicking on it. There should be a report in PDF format attached to the mail. View the report by opening it.
 
+- image
+
+- image
+
+- image
+
 ### Health check
 
 This is the last part of the lab, where you will have to write a Python script named `health_check.py` that will run in the background monitoring some of your system statistics: CPU usage, disk space, available memory and name resolution. Moreover, this Python script should send an email if there are problems, such as:
-
-
 
 - Report an error if CPU usage is over 80%
 
@@ -392,8 +676,6 @@ This is the last part of the lab, where you will have to write a Python script n
 - Report an error if available memory is less than 500MB
 
 - Report an error if the hostname "localhost" cannot be resolved to "127.0.0.1"
-
-
 
 Create a python script named `health_check.py` using the nano editor:
 
@@ -411,8 +693,6 @@ Import the necessary Python libraries (eg. `shutil`, `psutil`) to write this scr
 
 Complete the script to check the system statistics every 60 seconds, and in event of any issues detected among the ones mentioned above, an email should be sent with the following content:
 
-
-
 - From: `automation@example.com`
 
 - To: `username@example.com` (Replace username with the username given in the Connection Details Panel on the right hand side.)
@@ -429,9 +709,63 @@ Complete the script to check the system statistics every 60 seconds, and in even
 
 - E-mail Body: Please check your system and resolve the issue as soon as possible.
 
-
-
 Note: There is no attachment file here, so you must be careful while defining the `generate_email()` method in the emails.py script or you can create a separate `generate_error_report()` method for handling non-attachment email.
+
+`health_check.py`
+```
+#! /usr/bin/env python3
+
+import os
+import shutil
+import psutil
+import socket
+from emails import generate_error_report, send_email
+
+def check_cpu_usage():
+	"""Verifies that there's enough unused CPU"""
+	usage = psutil.cpu_percent(1)
+	return usage > 80
+
+def check_disk_usage(disk):
+	"""Verifies that there's enough free space on disk"""
+	du = shutil.disk_usage(disk)
+	free = du.free / du.total * 100
+	return free > 20
+
+def check_available_memory():
+	"""available memory in linux-instance, in byte"""
+	available_memory = psutil.virtual_memory().available/(1024*1024)
+	return available_memory > 500
+
+def check_localhost():
+	"""check localhost is correctly configured on 127.0.0.1"""
+	localhost = socket.gethostbyname('localhost')
+	return localhost == '127.0.0.1'
+
+if check_cpu_usage():
+	error_message = "CPU usage is over 80%"
+elif not check_disk_usage('/'):
+	error_message = "Available disk space is less than 20%"
+elif not check_available_memory():
+	error_message = "Available memory is less than 500MB"
+elif not check_localhost():
+	error_message = "localhost cannot be resolved to 127.0.0.1"
+else:
+	pass
+
+# send email if any error reported
+if __name__ == "__main__":
+	try:
+		sender = "automation@example.com"
+		receiver = "{}@example.com".format(os.environ.get('USER'))
+		subject = "Error - {}".format(error_message)
+		body = "Please check your system and resolve the issue as soon as possible"
+		message = generate_error_report(sender, receiver, subject, body)
+		send_email(message)
+	except NameError:
+		pass
+
+```
 
 Once you have completed the `health_check.py` script. Save the file by typing Ctrl-o, Enter key, and Ctrl-x.
 
@@ -455,6 +789,26 @@ To test out your script, you can install the `stress` tool.
 sudo apt install stress
 ```
 
+Output:
+```
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following NEW packages will be installed:
+  stress
+0 upgraded, 1 newly installed, 0 to remove and 2 not upgraded.
+Need to get 21.3 kB of archives.
+After this operation, 50.2 kB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian stretch/main amd64 stress amd64 1.0.4-2 [21.3 kB]
+Fetched 21.3 kB in 0s (415 kB/s)
+Selecting previously unselected package stress.
+(Reading database ... 56165 files and directories currently installed.)
+Preparing to unpack .../stress_1.0.4-2_amd64.deb ...
+Unpacking stress (1.0.4-2) ...
+Processing triggers for man-db (2.7.6.1-2) ...
+Setting up stress (1.0.4-2) ...
+```
+
 Next, call the tool using a good number of CPUs to fully load our CPU resources:
 
 ```
@@ -470,6 +824,10 @@ Now run the script:
 ```
 
 Check your inbox for any new email.
+
+- image
+
+- image
 
 Close the `stress --cpu` command by clicking Ctrl-c.
 
