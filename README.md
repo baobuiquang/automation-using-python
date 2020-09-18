@@ -237,7 +237,7 @@ Execute the example_upload.py script, which will upload the images.
 
 Now check out that the file icon.sheet.png was uploaded to the web server by visiting the URL `[linux-instance-IP-Address]/media/images/`, followed by clicking on the file name.
 
-- image
+![Image](https://github.com/buiquangbao/automation-using-python/assets/img02.png?raw=true)
 
 In a similar way, you are going to write a script named `supplier_image_upload.py` that takes the jpeg images from the `supplier-data/images` directory that you've processed previously and uploads them to the web server fruit catalog.
 
