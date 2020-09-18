@@ -410,6 +410,8 @@ Now go to the main page of your website (by going to `http://[linux-instance-IP-
 
 ![Image](https://github.com/buiquangbao/automation-using-python/blob/master/assets/img07.png)
 
+![Image](https://github.com/buiquangbao/automation-using-python/blob/master/assets/img08.png)
+
 ### Generate a PDF report
 
 Once the `images` and `descriptions` have been uploaded to the fruit store web-server, you will have to generate a PDF file to send to the supplier, indicating that the data was correctly processed. To generate PDF reports, you can use the `ReportLab` library. The content of the report should look like this:
@@ -659,11 +661,11 @@ Now, check the webmail by visiting `[linux-instance-external-IP]/webmail`. Here,
 
 Now you should be able to see your inbox, with one unread email. Open the mail by double clicking on it. There should be a report in PDF format attached to the mail. View the report by opening it.
 
-![Image](https://github.com/buiquangbao/automation-using-python/blob/master/assets/img07.png)
-
-![Image](https://github.com/buiquangbao/automation-using-python/blob/master/assets/img08.png)
-
 ![Image](https://github.com/buiquangbao/automation-using-python/blob/master/assets/img09.png)
+
+![Image](https://github.com/buiquangbao/automation-using-python/blob/master/assets/img10.png)
+
+![Image](https://github.com/buiquangbao/automation-using-python/blob/master/assets/img11.png)
 
 ### Health check
 
@@ -825,9 +827,9 @@ Now run the script:
 
 Check your inbox for any new email.
 
-![Image](https://github.com/buiquangbao/automation-using-python/blob/master/assets/img10.png)
+![Image](https://github.com/buiquangbao/automation-using-python/blob/master/assets/img12.png)
 
-![Image](https://github.com/buiquangbao/automation-using-python/blob/master/assets/img11.png)
+![Image](https://github.com/buiquangbao/automation-using-python/blob/master/assets/img13.png)
 
 Close the `stress --cpu` command by clicking Ctrl-c.
 
