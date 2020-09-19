@@ -27,7 +27,19 @@ Finally, in parallel to the automation running, we want to **check the health of
 - [Send report through email](#Send-report-through-email)
 - [System's health check and report](#Systems-health-check-and-report)
 
-### Source Code
+#### Python Libraries Used
+- [os](https://docs.python.org/3.8/library/os.html)
+- [datetime](https://docs.python.org/3/library/datetime.html)
+- [PIL](http://www.pythonware.com/products/pil/) (Python Imaging Library)
+- [requests](https://requests.readthedocs.io/en/master/) (HTTP library)
+- [reportlab](https://www.reportlab.com/dev/opensource/) (data in json format, post to web URL that converts to PDF)
+- [mimetypes](https://docs.python.org/3.8/library/mimetypes.html) (Map filenames to MIME types)
+- [smtplib](https://docs.python.org/3/library/smtplib.html) (Simple Mail Transfer Protocol - SMTP client)
+- [shutil](https://docs.python.org/3/library/shutil.html) (High-level file operations)
+- [psutil](https://psutil.readthedocs.io/en/latest/) (process and system utilities - CPU, memory, disks, network, sensors)
+- [socket](https://docs.python.org/3/library/socket.html) (Low-level networking interface)
+
+#### Source Code
 You can find all my source code files (Python) at [here](https://github.com/buiquangbao/automation-using-python/tree/master/Automating%20Real-World%20Tasks%20with%20Python).
 
 ## Fetching supplier data
